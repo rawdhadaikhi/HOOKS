@@ -1,52 +1,51 @@
 .App {
   text-align: center;
   background-color: black;
+  height: 1000px;
 }
+ 
+.movie-title{
+  text-align: center;
+   width: 100%;
+   margin-bottom:  20px;
+   padding-top: 20px;
+   color: orange;
+}
+.searchbox{
+ display: inline-block;
+ width: 50%;
+  margin-left: 30px;
+}
+/* .filter{
+  display: inline-table;
+  width: auto;
+  margin-left: 40px;
+  margin-right: 40px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+} */
 
-
-.App-header{
-  background-color: black;
-  min-height: 100vh;
-  display: flex;
-  flex-direction:column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: nowrap;
-  font-size:large;
-  color: black;
+.stars{
+  width:20%;
+  font-size: 30px;
+   display: inline-block;
+   text-align: center;
+   padding-left: 0;
 }
-
-.App-link {
-  color: #61dafb;
-}
-.movie-card{
-  display:grid;
-grid-template-columns: auto auto auto auto;
-margin: 20 20px 20px 20px;
-grid-gap: 1em;
-}
+ /*------------style  modal*/
 .lab{
-  display:"inline-block";
+  display:inline-block;
    width:100px
 }
 .inp-text{
   display:"inline-block";
 }
-.bar{
-  width: 1000px;
-}
-.movie-title{
-  text-align: center;
-}
-@media screen and (max-width: 600px)
-{
-  .movie-card{
-    display: block;
-  }  
-  
+/*----------movie list */
+.movie-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px 50px;
+  align-items: stretch;
+
 }

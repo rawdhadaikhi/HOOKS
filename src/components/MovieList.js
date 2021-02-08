@@ -1,26 +1,26 @@
-import React  from 'react';
-import {Card} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import StarRatingComponent from 'react-star-rating-component';
- 
+import React ,{useState} from 'react'
 
+import MovieCard from './MovieCard';
+import AddModal from './AddModal';
 
- const MovieList = (props) =>{
- 
-     return(
-         <div className="movie-card">
-          
-          { props.movies.map((movie,index) =><Card style={{ width: '15rem',height:425}} key={index}>
-           <Card.Img  src={movie.posteUrl}  style={{height:'17rem'}}/>
-           <Card.Body>
-            <Card.Text >{movie.title}</Card.Text>
-            <Card.Text>{movie.description}</Card.Text>
-            <StarRatingComponent value={movie.rate}  name="rate" />
-          </Card.Body> 
-          </Card>
-          )}
-          </div>
+const MovieList = ({movies ,addNewMovie}) => {
+    
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
-     )
- }
- export default MovieList;
+    return (
+        <div>
+         <button onClick={handleShow} className="btn btn-warning btn-search">Add a new movie</button>
+         <AddModal handleClose={handleClose} show={show} addNewMovie ={addNewMovie}/>
+        <div className="movie-list" >
+            {movies.map((el , index) =><MovieCard  movie ={el} key ={index}>
+               </MovieCard>
+
+               )} 
+        </div>
+        </div>
+    )
+}
+
+export default MovieList
